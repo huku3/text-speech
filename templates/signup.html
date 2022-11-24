@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4 text-center">
+            <form action="/signup" method="post">
+                <h1 class="mt-5">SignUp</h1>
+                <div class="input-group mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <input class="btn btn-success" type="submit" value="SingUp">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
