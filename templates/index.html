@@ -2,23 +2,18 @@
 
 {% block content %}
 <div class="row">
-        <div class="col-4 offset-4 text-center">
-<h1>🐍TEXT TO SPEECH🐶 </h1 >
-</div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-4 offset-4 text-center">
+        <h1>🐍TEXT TO SPEECH🐶</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-<textarea name="text" placeholder="読み上げたいテキストを入力してください" rows="4" cols="40" required></textarea>
-<button onclick="readText()">読み上げる</button>
-<p>上記テキストを読み上げます。<br>
-「読み上げる」ボタンをクリックしてください。</p>
-<form action="/logout" method="post">
-    <input type="submit" value="Logout">
-</form>
-{% endblock %}
+            <textarea name="text" placeholder="読み上げたいテキストを入力してください" rows="4" cols="40" required></textarea>
+            <button onclick="readText()">読み上げる</button>
+            <p>上記テキストを読み上げます。<br>
+                「読み上げる」ボタンをクリックしてください。</p>
+            <form action="/logout" method="post">
+                <input type="submit" value="Logout">
 
+            </form>
+            {% endblock %}

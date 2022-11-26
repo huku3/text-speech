@@ -7,9 +7,12 @@ from flask import request
 from flask_login import LoginManager
 from flask_login import login_required
 from flask_login import login_user
-
+from flask_login import logout_user
+from flask import jsonify
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
+from google.cloud import texttospeech
+from google.cloud import storage
 
 # from database import User
 
@@ -65,13 +68,23 @@ def register():
     return redirect("/login")
 
 
-from flask_login import logout_user
-
-
 @app.route("/logout", methods=["POST"])
 def logout():
     logout_user()
     return redirect("/login")
+
+
+def implicit():
+
+    # If you don't specify credentials when constructing the client, the
+    # client library will look for credentials in the environment.
+    storage_client = storage.Client()
+
+    # Make an authenticated API request
+    buckets = list(storage_client.list_buckets())
+    print(buckets)
+
+
 
 
 if __name__ == "__main__":
