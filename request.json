@@ -1,0 +1,14 @@
+{
+  "audioConfig": {
+    "audioEncoding": "LINEAR16",
+    "pitch": 0,
+    "speakingRate": 1
+  },
+  "voice": {
+    "languageCode": "ja-JP",
+    "name": "ja-JP-Standard-B"
+  },
+  "input": {
+    "text": "こにゃにゃちわ、元気ですか〜"
+  }
+}

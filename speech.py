@@ -74,18 +74,16 @@ def logout():
     return redirect("/login")
 
 
-def implicit():
+# def implicit():
 
-    # If you don't specify credentials when constructing the client, the
-    # client library will look for credentials in the environment.
-    storage_client = storage.Client()
+#     # If you don't specify credentials when constructing the client, the
+#     # client library will look for credentials in the environment.
+#     storage_client = storage.Client()
 
-    # Make an authenticated API request
-    buckets = list(storage_client.list_buckets())
-    print(buckets)
-
-
+#     # Make an authenticated API request
+#     buckets = list(storage_client.list_buckets())
+#     print(buckets)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)

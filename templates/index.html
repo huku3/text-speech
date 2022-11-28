@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="row">
+<!-- <div class="row">
     <div class="col-4 offset-4 text-center">
-        <h1>🐍TEXT TO SPEECH🐶</h1>
+        <h1>🐍TEXT TO SPEECH🐶 </h1>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -15,5 +15,46 @@
             <form action="/logout" method="post">
                 <input type="submit" value="Logout">
 
+            </form> -->
+
+<body class="img">
+    <div class="col-4 offset-4 text-center">
+        <div class="text">
+            <h1>🐍TEXT TO SPEECH🐶 </h1>
+            <h3>よみあげる、ただそれだけ</h3>
+
+            <form>
+                <textarea class="form-control" id="text" name="text" placeholder="よみあげたいテキストを入力してください" aria-label="With textarea"></textarea><br>
+                <button onclick="readAloud()">よみあげる</button>
+                <p>上記テキストをよみあげます。<br>「よみあげる」ボタンをクリックしてください。</p>
             </form>
-            {% endblock %}
+        </div>
+
+
+
+        <script>
+            function readAloud() {
+                // テキストを取得
+                const text = document.getElementById("text").value
+
+                // ブラウザにWeb Speech API Speech Synthesis機能があるか判定
+                if ('speechSynthesis' in window) {
+                    // 発言を設定
+                    const uttr = new SpeechSynthesisUtterance()
+                    uttr.text = text
+                    // 発言を再生
+                    window.speechSynthesis.speak(uttr)
+
+                } else {
+                    alert('大変申し訳ありません。このブラウザは音声合成に対応していません。')
+                }
+            }
+
+
+        </script>
+
+
+
+    </div>
+</body>
+{% endblock %}
